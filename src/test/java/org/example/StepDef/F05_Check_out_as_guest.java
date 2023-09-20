@@ -140,6 +140,6 @@ public class F05_Check_out_as_guest {
     @And("The user selects the check payment method and clicks on Continue")
     public void theUserSelectsTheCheckPaymentMethodAndClicksOnContinue() {
         CheckOutPage.PaymentMethod_0().click();
-        CheckOutPage.PaymentNext().click();;
+        CheckOutPage.PaymentNext().click();
     }
 }
