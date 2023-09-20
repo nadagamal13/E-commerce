@@ -8,6 +8,9 @@ import org.example.Pages.RegisterPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
+
+import java.io.IOException;
+
 import static org.example.StepDef.Hooks.*;
 
 public class F01_Register {
@@ -46,8 +49,10 @@ public class F01_Register {
     }
 
     @And("User enters a valid email")
-    public void userEntersAValidEmail() {
-        RegisterPage.EmailField().sendKeys(fake.internet().emailAddress());
+    public void userEntersAValidEmail() throws IOException {
+        String email= fake.internet().safeEmailAddress();
+        RegisterPage.EmailField().sendKeys(email);
+        configuration.set("email",email);
     }
 
     @And("User enters company name")
@@ -63,10 +68,11 @@ public class F01_Register {
     }
 
     @And("User enters password and confirms it")
-    public void userEntersPasswordAndConfirmsIt() {
+    public void userEntersPasswordAndConfirmsIt() throws IOException {
         String password = fake.internet().password();
         RegisterPage.PasswordField().sendKeys(password);
         RegisterPage.ConfirmPasswordField().sendKeys(password);
+        configuration.set("password",password);
     }
 
     @And("User clicks the register button")

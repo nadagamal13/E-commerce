@@ -1,5 +1,5 @@
 @Smoke
-Feature: SignUp: The guest user can create a new valid account
+Feature: F01_Register: The guest user can create a new valid account
   Background:
     Given The user clicks on Register
 

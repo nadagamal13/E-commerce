@@ -6,6 +6,9 @@ import io.cucumber.java.en.When;
 import org.example.Pages.HomePage;
 import org.example.Pages.LoginPage;
 import org.testng.asserts.SoftAssert;
+
+import java.io.IOException;
+
 import static org.example.StepDef.Hooks.*;
 
 public class F02_Login {
@@ -17,9 +20,12 @@ public class F02_Login {
         HomePage.Login.click();
     }
 
-    @When("User enters valid email {string} and password {string}")
-    public void userEntersValidEmailAndPassword(String arg0, String arg1) {
-
+    @When("User enters valid email and password")
+    public void userEntersValidEmailAndPassword() throws IOException {
+String email=configuration.get("email");
+String password=configuration.get("password");
+login.email.sendKeys(email);
+login.password.sendKeys(password);
     }
 
     @And("User clicks on Login")

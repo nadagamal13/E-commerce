@@ -107,5 +107,4 @@ public static WebElement CartEmpty(){
 public static WebElement PaymentMethod_0(){
         return driver.findElement(By.id("paymentmethod_0"));
     }
-
 }
