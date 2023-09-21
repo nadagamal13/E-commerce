@@ -73,6 +73,7 @@ public class D01_registerStepDef {
     public void successMessageIsDisplayed() {
         SoftAssert soft=new SoftAssert();
         soft.assertEquals(P01_register.ConfirmationMsg().getText().toLowerCase(),"your registration completed".toLowerCase());
+        soft.assertEquals(P01_register.ConfirmationMsg().getCssValue("color"),"rgba(76, 177, 124, 1)");
         soft.assertAll();
     }
 }

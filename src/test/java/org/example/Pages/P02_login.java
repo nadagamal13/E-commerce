@@ -10,4 +10,6 @@ public class P02_login extends pageBase {
     public WebElement loginButton;
 @FindBy(className = "message-error")
     public WebElement errorMsg;
+@FindBy(className = "ico-account")
+    public WebElement myAccount;
 }
