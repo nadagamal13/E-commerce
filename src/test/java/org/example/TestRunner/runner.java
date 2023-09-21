@@ -4,7 +4,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src\\main\\resources\\Features",
         glue = "org.example.StepDef",
-        tags = "@Smoke",
+        tags = "@smoke",
         plugin = {
                 "pretty",
                 "html:target/cucumber.html",

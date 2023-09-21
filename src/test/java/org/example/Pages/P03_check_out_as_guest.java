@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 import static org.example.StepDef.Hooks.*;
-public class CheckOutPage{
+public class P03_check_out_as_guest {
     public static List<WebElement> CartButton(){
         return driver.findElements(By.className("product-box-add-to-cart-button"));
     }

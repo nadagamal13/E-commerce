@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 import static org.example.StepDef.Hooks.*;
-public class RegisterPage {
+public class P01_register {
     public static List<WebElement> Gender(){
         return driver.findElements(By.name("Gender"));
     }

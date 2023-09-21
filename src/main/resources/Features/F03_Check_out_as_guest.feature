@@ -1,4 +1,4 @@
-@Smoke
+@smoke
 Feature: F05_Check out as guest: The Guest can check out the products and make a payment
   Background:
     Given The guest add product to the shopping cart
