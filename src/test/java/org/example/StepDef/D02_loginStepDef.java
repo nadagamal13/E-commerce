@@ -3,14 +3,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.Pages.HomePage;
+import org.example.Pages.P03_homePage;
 import org.example.Pages.P02_login;
 import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import static org.example.StepDef.Hooks.*;
 public class D02_loginStepDef {
     P02_login login=new P02_login();
-    HomePage HomePage=new HomePage();
+    P03_homePage HomePage=new P03_homePage();
     @Given("user go to login page")
     public void userGoToLoginPage() {
         HomePage.Login.click();

@@ -11,8 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 import static org.example.StepDef.Hooks.*;
-
-
 public class D03_Check_out_as_guest {
     @Given("The guest add product to the shopping cart")
     public void theGuestAddProductToTheShoppingCart() {
