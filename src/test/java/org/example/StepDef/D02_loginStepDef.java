@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.P03_homePage;
 import org.example.Pages.P02_login;
-import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import static org.example.StepDef.Hooks.*;
 public class D02_loginStepDef {
@@ -28,7 +27,6 @@ login.password.sendKeys(password);
     }
     @Then("User login to the system successfully")
     public void userLoginToTheSystemSuccessfully() {
-        SoftAssert soft=new SoftAssert();
         soft.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/");
         boolean myAccount= login.myAccount.isDisplayed();
         soft.assertTrue(myAccount);
@@ -44,7 +42,6 @@ login.password.sendKeys(password);
     }
     @Then("User could not login to the system")
     public void userCouldNotLoginToTheSystem() {
-        SoftAssert soft=new SoftAssert();
         boolean Msg=login.errorMsg.getText().toLowerCase().contains("login was unsuccessful".toLowerCase());
         soft.assertTrue(Msg);
         soft.assertEquals(login.errorMsg.getCssValue("color"),"rgba(228, 67, 75, 1)");

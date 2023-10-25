@@ -23,4 +23,6 @@ public class P03_homePage extends pageBase{
     public WebElement picture;
     @FindBy(className = "value")
     public WebElement value;
+    @FindBy(xpath = "//ul[@class=\"top-menu notmobile\"]/li")
+    public List<WebElement> mainLinks;
 }

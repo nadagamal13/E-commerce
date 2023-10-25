@@ -7,22 +7,17 @@ import org.example.Pages.P03_check_out_as_guest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
-import java.time.Duration;
 import static org.example.StepDef.Hooks.*;
 public class D03_Check_out_as_guest {
     @Given("The guest add product to the shopping cart")
     public void theGuestAddProductToTheShoppingCart() {
         P03_check_out_as_guest.CartButton().get(1).click();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         WebElement addToCart = P03_check_out_as_guest.CartButton2();
         wait.until(ExpectedConditions.elementToBeClickable(addToCart)).click();
     }
 
     @And("The guest user navigate to the shopping cart")
     public void theGuestUserNavigateToTheShoppingCart() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement navCart = P03_check_out_as_guest.CartIcon();
         wait.until(ExpectedConditions.elementToBeClickable(navCart)).click();
     }
@@ -126,7 +121,6 @@ public class D03_Check_out_as_guest {
     public void theOrderIsConfirmedAndTheUserCanNavigateToOrderDetails() {
         P03_check_out_as_guest.ConfirmNext().click();
 
-        SoftAssert soft=new SoftAssert();
         boolean result = P03_check_out_as_guest.OrderNumber().getText().toLowerCase().contains("order number:");
         soft.assertTrue(result);
 

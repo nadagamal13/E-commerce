@@ -7,7 +7,6 @@ import org.example.Pages.P03_homePage;
 import org.example.Pages.P01_register;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 import static org.example.StepDef.Hooks.*;
 public class D01_registerStepDef {
@@ -71,7 +70,6 @@ public class D01_registerStepDef {
     }
     @Then("success message is displayed")
     public void successMessageIsDisplayed() {
-        SoftAssert soft=new SoftAssert();
         soft.assertEquals(P01_register.ConfirmationMsg().getText().toLowerCase(),"your registration completed".toLowerCase());
         soft.assertEquals(P01_register.ConfirmationMsg().getCssValue("color"),"rgba(76, 177, 124, 1)");
         soft.assertAll();
