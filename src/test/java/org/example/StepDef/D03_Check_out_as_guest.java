@@ -7,8 +7,13 @@ import org.example.Pages.P03_check_out_as_guest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 import static org.example.StepDef.Hooks.*;
 public class D03_Check_out_as_guest {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     @Given("The guest add product to the shopping cart")
     public void theGuestAddProductToTheShoppingCart() {
         P03_check_out_as_guest.CartButton().get(1).click();
