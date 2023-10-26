@@ -1,4 +1,5 @@
 package org.example.StepDef;
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -7,9 +8,14 @@ import org.example.Pages.P03_homePage;
 import org.example.Pages.P01_register;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 import java.io.IOException;
-import static org.example.StepDef.Hooks.*;
 public class D01_registerStepDef {
+    Faker fake=new Faker();
+    public int randomNumber(int min,int max){
+        return (int)Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    SoftAssert soft=new SoftAssert();
     P03_homePage HomePage=new P03_homePage();
     @Given("user go to register page")
     public void userGoToRegisterPage() {

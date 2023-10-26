@@ -1,10 +1,8 @@
 package org.example.StepDef;
-import com.github.javafaker.Faker;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 public class Hooks {
     public static WebDriver driver;
@@ -21,18 +19,10 @@ public class Hooks {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://demo.nopcommerce.com/");
     }
-
     @After
     public void CloseBrowser ()throws InterruptedException
     {
         Thread.sleep(3000);
         driver.quit();
     }
-
-    public static Faker fake=new Faker();
-    public static int randomNumber(int min,int max){
-        return (int)Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    public static SoftAssert soft=new SoftAssert();
-
 }
