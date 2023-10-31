@@ -18,8 +18,7 @@ public class D03_currenciesStepDef {
     public void verifyEuroSymbolIsShownOnTheFourProductsDisplayedInHomePage() {
         int i;
         for (i=0;i<HomePage.prices.size();i++){
-         boolean result=  HomePage.prices.get(i).getText().contains("€");
-            Assert.assertTrue(result);
+            Assert.assertTrue(HomePage.prices.get(i).getText().contains("€"));
         }
     }
 }

@@ -32,8 +32,7 @@ login.password.sendKeys(password);
     @Then("User login to the system successfully")
     public void userLoginToTheSystemSuccessfully() {
         soft.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/");
-        boolean myAccount= login.myAccount.isDisplayed();
-        soft.assertTrue(myAccount);
+        soft.assertTrue(login.myAccount.isDisplayed());
         soft.assertAll();
     }
     @When("User enters invalid email")
@@ -46,8 +45,7 @@ login.password.sendKeys(password);
     }
     @Then("User could not login to the system")
     public void userCouldNotLoginToTheSystem() {
-        boolean Msg=login.errorMsg.getText().toLowerCase().contains("login was unsuccessful".toLowerCase());
-        soft.assertTrue(Msg);
+        soft.assertTrue(login.errorMsg.getText().toLowerCase().contains("login was unsuccessful".toLowerCase()));
         soft.assertEquals(login.errorMsg.getCssValue("color"),"rgba(228, 67, 75, 1)");
         soft.assertAll();
     }

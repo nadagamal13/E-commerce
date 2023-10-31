@@ -119,9 +119,7 @@ public class D03_Check_out_as_guest {
     @Then("The order is confirmed and the user can navigate to order details")
     public void theOrderIsConfirmedAndTheUserCanNavigateToOrderDetails() {
         P03_check_out_as_guest.ConfirmNext().click();
-
-        boolean result = P03_check_out_as_guest.OrderNumber().getText().toLowerCase().contains("order number:");
-        soft.assertTrue(result);
+        soft.assertTrue(P03_check_out_as_guest.OrderNumber().getText().toLowerCase().contains("order number:"));
 
         P03_check_out_as_guest.CartIcon().click();
         soft.assertEquals(P03_check_out_as_guest.CartEmpty().getText().toLowerCase(),"your shopping cart is empty!".toLowerCase());

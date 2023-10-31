@@ -12,12 +12,10 @@ public class D04_searchStepDef {
         HomePage.search.sendKeys(arg0);
         HomePage.searchButton.click();
         soft.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/search?q="+arg0);
-        boolean items=HomePage.productItems.isEmpty();
-        soft.assertFalse(items);
+        soft.assertFalse(HomePage.productItems.isEmpty());
         int i;
         for(i=0;i<HomePage.products.size();i++){
-           boolean result= HomePage.products.get(i).getText().toLowerCase().contains(arg0.toLowerCase());
-           soft.assertTrue(result);
+           soft.assertTrue(HomePage.products.get(i).getText().toLowerCase().contains(arg0.toLowerCase()));
             soft.assertAll();
         }
         soft.assertAll();
@@ -27,7 +25,6 @@ public class D04_searchStepDef {
         HomePage.search.sendKeys(arg0);
         HomePage.searchButton.click();
         HomePage.picture.click();
-        boolean result= HomePage.value.getText().toLowerCase().contains(arg0.toLowerCase());
-        Assert.assertTrue(result);
+        Assert.assertTrue(HomePage.value.getText().toLowerCase().contains(arg0.toLowerCase()));
     }
 }
